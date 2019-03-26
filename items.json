@@ -1,0 +1,65 @@
+{
+    "music": [
+    {
+        "id": 1,
+        "name": "30s to Mars",
+        "price": 1299,
+        "imgName": "30stoMars.jpg"
+    },
+    {
+        "id": 2,
+        "name": "A Beautiful Lie",
+        "price": 1499,
+        "imgName": "ABeautifulLie.jpg"
+    },
+    {
+        "id": 3,
+        "name": "This is War",
+        "price": 1699,
+        "imgName": "ThisisWar.jpg"
+    },{
+        "id": 4,
+        "name": "Love Lust Faith Dreams",
+        "price": 1999,
+        "imgName": "LoveLustFaithDreams.jpg"
+    },{
+        "id": 5,
+        "name": "America",
+        "price": 1999,
+        "imgName": "America.jpg"
+    }
+    ],
+    "merch": [
+        {
+            "id": 6,
+            "name": "Cup Red",
+            "price": 699,
+            "imgName": "cup1.jpg"
+        },{
+            "id": 7,
+            "name": "Cup Black",
+            "price": 699,
+            "imgName": "cup2.jpg"
+        },{
+            "id": 8,
+            "name": "Hoodie I Believe in Nothing",
+            "price": 3999,
+            "imgName": "hoodie1.jpg"
+        },{
+            "id": 9,
+            "name": "Hoodie Mars",
+            "price": 3999,
+            "imgName": "hoodie2.jpg"
+        },{
+            "id": 10,
+            "name": "T-shirt Black",
+            "price": 1999,
+            "imgName": "tshirt1.jpg"
+        },{
+            "id": 11,
+            "name": "T-shirt White",
+            "price": 1999,
+            "imgName": "tshirt2.jpg"
+        }
+    ]
+}

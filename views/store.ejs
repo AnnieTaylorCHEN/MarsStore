@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Thirty Seconds to Mars | Store</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="This is the description">
+        <link rel="stylesheet" type="text/css" media="screen" href="styles.css">
+        <script src="https://checkout.stripe.com/checkout.js" defer></script>
+        <script>
+        const stripePublicKey = '<%= stripePublicKey %>'
+        </script>
+        <script src="store.js" defer></script>
+    </head>
+
+    <body>
+        <header class="main-header">
+            <nav class="main-nav nav">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="store">STORE</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="fans">FANS</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="search-container">
+            <input type="text" id="search-text" placeholder="Search..">
+            <p id="feedback"></p>
+        </section>
+
+        <section class="container content-section">
+            <h2 class="section-header">MUSIC</h2>
+            <div class="shop-items">
+            <% items.music.forEach((item) => { %>
+                <div class="shop-item" data-item-id="<%= item.id %>">
+                    <span class="shop-item-title"><%= item.name %></span>
+                    <img class="shop-item-image" src="Images/<%= item.imgName %>">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">$<%= item.price /100 %></span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+            <% }) %>
+            </div>
+        </section>
+
+        <section class="container content-section">
+        <h2 class="section-header">MERCH</h2>
+        <div class="shop-items">
+            <% items.merch.forEach((item) => { %>
+                <div class="shop-item" data-item-id="<%= item.id %>">
+                    <span class="shop-item-title"><%= item.name %></span>
+                    <img class="shop-item-image" src="Images/<%= item.imgName %>">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">$<%= item.price / 100 %></span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+            <% }) %>
+        </div>        
+    </section>
+
+    <section class="container content-section">
+        <h2 class="section-header">CART</h2>
+        <div class="cart-row">
+            <span class="cart-item cart-header cart-column">ITEM</span>
+            <span class="cart-price cart-header cart-column">PRICE</span>
+            <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+        </div>
+        <div class="cart-items">
+        </div>
+        <div class="cart-total">
+            <strong class="cart-total-title">Total</strong>
+            <span class="cart-total-price">$0</span>
+        </div>
+        <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container main-footer-container">
+            <ul class="nav footer-nav">
+                <li>
+                    <iframe src="https://open.spotify.com/follow/1/?uri=spotify:artist:0RqtSIYZmd4fiBKVFqyIqD?si=LhjFFS4gSWGcidMKJvN7zA&size=detail&theme=dark" width="300" height="56" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com" target="_blank">
+                        <img src="Images/YouTube Logo.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com" target="_blank">
+                        <img src="Images/Facebook Logo.png">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

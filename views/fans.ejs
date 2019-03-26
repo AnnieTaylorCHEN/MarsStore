@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Thirty Seconds to Mars | Store</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="This is the description">
+        <link rel="stylesheet" type="text/css" media="screen" href="styles.css">
+        <script src="fans.js" defer></script>
+    </head>
+
+    <body>
+        <header class="main-header">
+            <nav class="main-nav nav">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="store">STORE</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="fans">FANS</a></li>
+                </ul>
+            </nav>
+        </header>
+
+       
+        <section class="content-section container">
+            <h2>Dear fans, we'd love to hear from you!</h2>
+            <% fans.comments.forEach((comment) => { %>
+                <p class="name"><%= comment.name%></p>
+                <p class="message"><%= comment.message%></p>
+            <% }) %>
+            <div id="commentDom">
+                
+            </div>
+        </section>
+
+        <div class="comment">
+            <label for="full-name">Name</label>
+            <input id="full-name" name="full-name" type="text"/>
+            <label for="message">Comment</label>
+            <textarea id="message" name="message"></textarea>
+            <button class="btn btn-primary" value="submit">Submit</button>
+        </div>
+
+    <footer class="main-footer">
+        <div class="container main-footer-container">
+            <ul class="nav footer-nav">
+                <li>
+                    <iframe src="https://open.spotify.com/follow/1/?uri=spotify:artist:0RqtSIYZmd4fiBKVFqyIqD?si=LhjFFS4gSWGcidMKJvN7zA&size=detail&theme=dark" width="300" height="56" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com" target="_blank">
+                        <img src="Images/YouTube Logo.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com" target="_blank">
+                        <img src="Images/Facebook Logo.png">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
