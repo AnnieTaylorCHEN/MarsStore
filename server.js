@@ -10,6 +10,8 @@ const app = express()
 const fs = require('fs')
 const stripe = require('stripe')(stripeSecretKey)
 
+const port = process.env.PORT || 3000
+
 app.set('view engine', 'ejs')
 app.use(express.json())
 app.use(express.static('public'))
@@ -85,4 +87,6 @@ app.post('/fans', (req, res) => {
     })
 })
 
-app.listen(3000)
+app.listen(port, ()=>{
+    console.log('Server is up on port' + port)
+})
