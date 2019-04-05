@@ -72,12 +72,6 @@ const stripeHandler = StripeCheckout.configure ({
 })
 
 function purchaseClicked () {
-    // alert ('Thank you for your purchase')
-    // const cartItems = document.getElementsByClassName('cart-items')[0]
-    // while (cartItems.hasChildNodes()){
-    //     cartItems.removeChild(cartItems.firstChild)
-    // }
-    // updateCartTotal()
     const priceElement = document.getElementsByClassName('cart-total-price')[0]
     const price = parseFloat(priceElement.innerText.replace('$', ' '))*100
     stripeHandler.open({
