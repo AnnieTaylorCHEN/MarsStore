@@ -15,6 +15,14 @@ html, body {
     font-family: "Raleway", Arial, sans-serif;
 }
 
+a{
+    text-decoration: none !important;
+}
+
+a:-webkit-any-link {
+    text-decoration: none;
+}
+
 /*Navigation*/
 
 .nav ul {
@@ -358,6 +366,10 @@ html, body {
     position: fixed;
     top:3rem;
     right:0;
+}
+
+.search-container a {
+    text-decoration: none !important;
 }
 
 #search-text{

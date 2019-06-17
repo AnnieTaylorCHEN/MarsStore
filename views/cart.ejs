@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Thirty Seconds to Mars | Store</title>
+        <title>Thirty Seconds to Mars | Cart</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="This is the description">
         <link rel="stylesheet" type="text/css" media="screen" href="styles.css">
@@ -27,32 +27,6 @@
             </nav>
         </header>
 
-        <section class="search-container">
-            <input type="text" id="search-text" placeholder="Search..">
-            <p id="feedback"></p>
-            <a href="/store?category=music" class="btn btn-primary" style="text-decoration: none" >MUSIC</a>
-            <a href="/store?category=merch" class="btn btn-primary" style="text-decoration: none">MERCH</a>
-            <a href="/purchase" class="btn btn-primary" style="text-decoration: none">CART</a>
-        </section>
-       
-       <a href="/">TEST</a>
-
-        <section class="container content-section">
-            <h2 class="section-header">Products</h2>
-            <div class="shop-items">
-            <% items.forEach((item) => { %>
-                <div class="shop-item" data-item-id="<%= item.id %>">
-                    <span class="shop-item-title"><%= item.name %></span>
-                    <img class="shop-item-image" src="Images/<%= item.imgName %>">
-                    <div class="shop-item-details">
-                        <span class="shop-item-price">$<%= item.price /100 %></span>
-                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
-                    </div>
-                </div>
-            <% }) %>
-            </div>
-        </section>
-
     <section class="container content-section">
         <h2 class="section-header">CART</h2>
         <div class="cart-row">
@@ -68,7 +42,6 @@
         </div>
         <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
     </section>
-
 
     <footer class="main-footer">
         <div class="container main-footer-container">
