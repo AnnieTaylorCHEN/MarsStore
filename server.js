@@ -26,8 +26,7 @@ const db = mongoose.connection
 db.on('error', error => console.error(error))
 db.once('open', () => console.log('Connected to Mongoose'))
 
-//Sorting by category: music, merch
-//?category=music, ?category=merch
+
 //Sorting by names: A to Z, Z to A
 //?SortBy=name:asc A to Z, ?SortBy=name:desc Z to A
 //Sorting by price: low to high, high to low
@@ -35,11 +34,19 @@ db.once('open', () => console.log('Connected to Mongoose'))
 app.get('/store', async (req, res) => {
     let items
     try {
-        if(req.query.category == undefined) {
+        if(!req.query.category) {
             items = await Product.find({})
         } else {
             items = await Product.find({category: req.query.category})
         }
+
+        if(req.query.sortBy) {
+            let sort ={}
+            const sortByArray = req.query.sortBy.split(':')
+            sort[sortByArray[0]] =[sortByArray[1]]
+            items = await Product.find().sort(sort).exec()
+        }
+
         res.render('store.ejs', { 
             stripePublicKey: stripePublicKey,
             items: items })
@@ -70,7 +77,6 @@ app.post('/purchase', async (req, res) => {
         items = []
     }
     let total = 0
-     
     req.body.items.forEach((item) => {
             const itemFromDatabase = items.find((i) => i.id == item.id)
             total = total + itemFromDatabase.price * item.quantity   

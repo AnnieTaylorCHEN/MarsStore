@@ -28,14 +28,28 @@
         </header>
 
         <section class="search-container">
-            <input type="text" id="search-text" placeholder="Search..">
-            <p id="feedback"></p>
-            <a href="/store?category=music" class="btn btn-primary" style="text-decoration: none" >MUSIC</a>
-            <a href="/store?category=merch" class="btn btn-primary" style="text-decoration: none">MERCH</a>
-            <a href="/purchase" class="btn btn-primary" style="text-decoration: none">CART</a>
+            <div>
+                <h2>Search</h2>
+                <input type="text" id="search-text" placeholder="Search..">
+                <p id="feedback"></p>
+            </div>
+            <div>
+                <h2>By category</h2>
+                <a href="/store?category=music" class="btn btn-primary" >MUSIC</a>
+                <a href="/store?category=merch" class="btn btn-primary" >MERCH</a> 
+            </div>
+            <div class="sortby"> 
+                <h2>sort by</h2>
+                <a href="/store?sortBy=name:asc" class="btn btn-primary" >Name A to Z</a>
+                <a href="/store?sortBy=name:desc" class="btn btn-primary" >Name Z to A</a>
+                <a href="/store?sortBy=price:asc" class="btn btn-primary" >Price low to high</a>
+                <a href="/store?sortBy=price:desc" class="btn btn-primary" >Price high to low</a>
+            </div>
         </section>
        
-       <a href="/">TEST</a>
+       <section id="cart">
+            <a href="/purchase" >CART</a>
+       </section>
 
         <section class="container content-section">
             <h2 class="section-header">Products</h2>
@@ -45,7 +59,7 @@
                     <span class="shop-item-title"><%= item.name %></span>
                     <img class="shop-item-image" src="Images/<%= item.imgName %>">
                     <div class="shop-item-details">
-                        <span class="shop-item-price">$<%= item.price /100 %></span>
+                        <span class="shop-item-price">$<%= item.price %></span>
                         <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                     </div>
                 </div>
