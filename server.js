@@ -21,11 +21,11 @@ app.use(express.static(path.join(__dirname,'public')))
 app.use(express.urlencoded({extended: true}))
 
 const mongoose = require('mongoose')
-mongoose.connect(process.env.DATABASE_URL,{ useNewUrlParser: true } )
+mongoose.connect(process.env.DATABASE_URL,{ useNewUrlParser: true, dbName: 'marsstore' } )
 const db = mongoose.connection
 db.on('error', error => console.error(error))
 db.once('open', () => console.log('Connected to Mongoose'))
-
+console.log(process.env.DATABASE_URL)
 
 //Sorting by names: A to Z, Z to A
 //?SortBy=name:asc A to Z, ?SortBy=name:desc Z to A
