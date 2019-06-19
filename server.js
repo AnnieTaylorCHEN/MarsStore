@@ -150,9 +150,9 @@ app.post('/send', (req, res) => {
             user: 'hiamynmax@gmail.com', // generated ethereal user
             pass: process.env.NODEMAILERPW  // generated ethereal password
         },
-        tls:{
-        rejectUnauthorized:false
-        }
+        // tls:{
+        // rejectUnauthorized:false
+        // }
      })
 
     // setup email data with unicode symbols
