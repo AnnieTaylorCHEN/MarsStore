@@ -10,6 +10,7 @@ const express = require('express')
 const app = express()
 const fs = require('fs')
 const stripe = require('stripe')(stripeSecretKey)
+const nodemailer = require('nodemailer')
 const Product = require('./models/products')
 
 const port = process.env.PORT || 3000
@@ -27,10 +28,7 @@ db.on('error', error => console.error(error))
 db.once('open', () => console.log('Connected to Mongoose'))
 console.log(process.env.DATABASE_URL)
 
-//Sorting by names: A to Z, Z to A
-//?SortBy=name:asc A to Z, ?SortBy=name:desc Z to A
-//Sorting by price: low to high, high to low
-//?SortBy=price:asc low to high, ?SortBy=price:desc high to low
+//Store page
 app.get('/store', async (req, res) => {
     let items
     try {
@@ -124,6 +122,61 @@ app.post('/fans', (req, res) => {
     })
 })
 
+//Contact page
+app.get('/contact', (req, res) => {
+    res.render('contact.ejs')
+})
+
+app.post('/send', (req, res) => {
+    const output = `
+    <h2>Hello, we have received your contact request, and we will get back to you quickly!</h2>
+    <h2>Yours, <h2>
+    <h2>Mars Store</h2>
+    <hr />
+    <h3>Contact Details From You</h3>
+    <ul>  
+      <li>Name: ${req.body.name}</li>
+      <li>Email: ${req.body.email}</li>
+    </ul>
+    <h3>Message</h3>
+    <p>${req.body.message}</p>
+  `
+   // create reusable transporter object with the default SMTP transport
+   let transporter = nodemailer.createTransport({
+        host: 'smtp.gmail.com',
+        port: 587,
+        secure: false, // true for 465, false for other ports
+        auth: {
+            user: 'hiamynmax@gmail.com', // generated ethereal user
+            pass: process.env.NODEMAILERPW  // generated ethereal password
+        },
+        tls:{
+        rejectUnauthorized:false
+        }
+     })
+
+    // setup email data with unicode symbols
+    let mailOptions = {
+    from: '"Mars Store Customer Support" <hiamynmax@gmail.com>', // sender address
+    to: req.body.email, // list of receivers
+    subject: 'We receive your request - Mars Store', // Subject line
+    html: output // html body
+    }
+
+    // send mail with defined transport object
+    transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+        return console.log(error)
+    }
+    console.log("Message sent: %s", info.messageId)
+    // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+    res.render('contact.ejs', { Msg:'Email has been sent!'} )
+})
+
+})
+
+
+//port
 app.listen(port, ()=>{
     console.log('Server is up on port ' + port)
 })

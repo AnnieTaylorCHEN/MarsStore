@@ -4,11 +4,10 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Thirty Seconds to Mars | Store</title>
+        <title>Thirty Seconds to Mars | Contact</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="This is the description">
         <link rel="stylesheet" type="text/css" media="screen" href="styles.css">
-        <script src="fans.js" defer></script>
     </head>
 
     <body>
@@ -24,25 +23,23 @@
             </nav>
         </header>
 
-       
-        <section class="content-section container">
-            <h2>Dear fans, we'd love to hear from you!</h2>
-            <% fans.comments.forEach((comment) => { %>
-                <p class="name"><%= comment.name%></p>
-                <p class="message"><%= comment.message%></p>
-            <% }) %>
-            <div id="commentDom">
-                
-            </div>
-        </section>
-
-        <div class="comment">
-            <label for="full-name">Name</label>
-            <input id="full-name" name="full-name" type="text"/>
-            <label for="message">Comment</label>
-            <textarea id="message" name="message"></textarea>
-            <button class="btn btn-primary" value="submit">Submit</button>
+    <section class="login-bg">
+        <div class="login-form">
+            <% if(locals.Msg != null){ %>
+                <h1><%= Msg %></h1>
+            <% } %>
+            <p>Hi there, leave us a message as we'd love to hear from you.</p>
+            <form class="input-group" action="/send" method="POST">
+                <label>Name: (required)</label>
+                <input type="text" name="name" placeholder="type your username" required>
+                <label>Email: (required)</label>
+                <input type="email" name="email" placeholder="type your email" required >
+                <label>Message: </label>
+                <textarea name="message" placeholder="Remember, be nice!" cols="30" rows="10"></textarea>
+                <button type="submit" class="btn btn-primary">Send</button>
+            </form>
         </div>
+    </section>
 
     <footer class="main-footer">
         <div class="container main-footer-container">

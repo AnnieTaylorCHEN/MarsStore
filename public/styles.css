@@ -431,6 +431,75 @@ input:focus {
   width: 100%;
 }
 
+/*Contact Page*/
+
+.login-bg{
+    background-image: url(Images/mars-contact-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form{
+    background-color: hsla(200, 100%, 6%, 0.6);
+    padding: 50px 30px;
+    min-width: 270px;
+    width: 50%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form h1{
+    color: white;
+}
+
+.login-form p {
+    color: white;
+}
+
+form label{
+    color: white;
+}
+
+.input-group{
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group input {
+    color: white;
+    background-color: transparent;
+    font-size: 1.3em;
+    padding: .1em .25em;
+    margin-bottom: 1.2em;
+    outline: none;
+}
+
+.input-group input:focus {
+    border: 1px solid var(--color-branding);
+}
+
+.input-group button{
+    margin-top: 1rem;
+    width: 50%;
+}
+
+textarea {
+    background: transparent;
+    color: white;
+    font-size: 1.3em;
+    overflow: auto;
+    outline: none;
+}
+
+
 @media only screen and (min-width: 425px){
     .tour-date {
         width: 11%;
