@@ -289,6 +289,7 @@ a:-webkit-any-link {
 }
 
 .cart-item-title {
+    display: none;
     color: #333;
     margin-left: .5em;
     font-size: 1.2em;
@@ -379,9 +380,24 @@ input:focus {
     bottom: 3rem;
     right:0.5rem;
     background-color: darkred;
+    font-family: inherit;
     font-weight: bold;
+    color: white;
     padding: 1.5rem;
     border-radius: 100%;
+    border-style: none;
+}
+
+#cartContent {
+    display: none;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 95%;
+    height: 100vh;
+    background-color: hsla(360, 100%, 100%, 0.95);
+    padding: 2rem;
+    overflow: auto;
 }
 
 #cart a {
@@ -500,6 +516,8 @@ textarea {
 }
 
 
+/*desktop*/
+
 @media only screen and (min-width: 425px){
     .tour-date {
         width: 11%;
@@ -538,6 +556,14 @@ textarea {
 
     .sortby a {
         margin-bottom: 1rem;
+    }
+
+    #cartContent{
+        width: 50vw;
+    }
+
+    .cart-item-title{
+        display: block;
     }
 
     .comment{

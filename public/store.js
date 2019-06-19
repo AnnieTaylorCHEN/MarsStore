@@ -130,7 +130,7 @@ let addItemToCart = (title, price, imageSrc, id) => {
           <span class="cart-price cart-column">${price}</span>
           <div class="cart-quantity cart-column">
             <input class="cart-quantity-input" type="number" value="1">
-            <button class="btn btn-danger" type="button">REMOVE</button>
+            <button class="btn btn-danger" type="button">X</button>
           </div>`
     cartRow.innerHTML = cartRowContents
     cartItems.append(cartRow)
@@ -138,6 +138,7 @@ let addItemToCart = (title, price, imageSrc, id) => {
     cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener ('change', quantityChanged)
 }
 
+//<span class="cart-item-title">${title}</span>
 
 //update the number of the cart total, use parseFloat to get numbers, but without $. Run iteration, first multiply each item with quanity, then add price of item in each row together. Important to round numbers cos result can be infinite decimal numbers. Remember to add $ back in the end. 
 let updateCartTotal = () => {
@@ -181,3 +182,15 @@ const searchFunction = () => {
         }
 
 }
+
+//cart toggle button
+const cartToggle = document.getElementById('cart')
+const cartContent = document.getElementById('cartContent')
+cartToggle.addEventListener('click', ()=> {
+    cartContent.style.display = 'block';
+})
+
+const shopToggle = document.getElementById('shop')
+shopToggle.addEventListener('click', ()=> {
+    cartContent.style.display = 'none';
+})

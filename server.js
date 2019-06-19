@@ -13,7 +13,7 @@ const stripe = require('stripe')(stripeSecretKey)
 const nodemailer = require('nodemailer')
 const Product = require('./models/products')
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3001
 
 app.set('view engine', 'ejs')
 
