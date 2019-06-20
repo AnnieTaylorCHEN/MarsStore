@@ -106,6 +106,7 @@ function addToCartClicked (e) {
    const imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src
    const id = shopItem.dataset.itemId
    addItemToCart(title, price, imageSrc, id)
+   itemCount()
    updateCartTotal()
 }
 
@@ -137,8 +138,6 @@ let addItemToCart = (title, price, imageSrc, id) => {
     cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeCartItem)
     cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener ('change', quantityChanged)
 }
-
-//<span class="cart-item-title">${title}</span>
 
 //update the number of the cart total, use parseFloat to get numbers, but without $. Run iteration, first multiply each item with quanity, then add price of item in each row together. Important to round numbers cos result can be infinite decimal numbers. Remember to add $ back in the end. 
 let updateCartTotal = () => {
@@ -194,3 +193,12 @@ const shopToggle = document.getElementById('shop')
 shopToggle.addEventListener('click', ()=> {
     cartContent.style.display = 'none';
 })
+
+//item count badge in cart 
+const itemCount = () => {
+    let count = document.getElementsByClassName('cart-item-title').length
+    console.log(count)
+    const cartCount = document.getElementById('cartCount') 
+    cartCount.style.display ='inline'
+    cartCount.innerText = count
+}
