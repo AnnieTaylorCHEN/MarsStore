@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Thirty Seconds to Mars | Contact</title>
+        <title>Thirty Seconds to Mars | Login</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="This is the description">
         <link rel="icon" href="/Images/mars-icon.png" type="image/x-icon"/>
@@ -24,20 +24,20 @@
             </nav>
         </header>
 
-    <section class="login-bg contact-bg">
+    <section class="login-bg mars-login">
         <div class="login-form">
             <% if(locals.Msg != null){ %>
                 <h1><%= Msg %></h1>
             <% } %>
-            <p>Hi there, leave us a message as we'd love to hear from you.</p>
-            <form class="input-group" action="/contact/send" method="POST">
+            <p>ECHELON, log in for exclusive just for you!</p>
+            <form class="input-group" action="/send" method="POST">
                 <label>Name: (required)</label>
                 <input type="text" name="name" placeholder="type your username" required>
                 <label>Email: (required)</label>
                 <input type="email" name="email" placeholder="type your email" required >
-                <label>Message: </label>
-                <textarea name="message" placeholder="Remember, be nice!" cols="30" rows="10"></textarea>
-                <button type="submit" class="btn btn-primary">Send</button>
+                <label>Password: (required)</label>
+                <input type="password" name="password" placeholder="type your password" required >
+                <button type="submit" class="btn btn-primary">Let me in</button>
             </form>
         </div>
     </section>

@@ -461,7 +461,6 @@ input:focus {
 /*Contact Page*/
 
 .login-bg{
-    background-image: url(Images/mars-contact-bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -471,6 +470,10 @@ input:focus {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.contact-bg {
+    background-image: url(Images/mars-contact-bg.jpg);
 }
 
 .login-form{
@@ -518,7 +521,7 @@ form label{
     width: 50%;
 }
 
-textarea {
+.contact-bg textarea {
     background: transparent;
     color: white;
     font-size: 1.3em;
@@ -526,6 +529,23 @@ textarea {
     outline: none;
 }
 
+
+/*login page*/
+.mars-login {
+    background-image: url(Images/mars-login-bg.jpg);
+    display: block;
+}
+
+.mars-login .login-form{
+    background-color: hsla(200, 100%, 6%, 0.8);
+    position: relative;
+    left: 50%;
+    top: 25%;
+}
+
+.mars-login input {
+    color: white;
+}
 
 /*desktop*/
 

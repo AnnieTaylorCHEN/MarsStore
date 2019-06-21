@@ -47,7 +47,7 @@ const stripeHandler = StripeCheckout.configure ({
             })
         }
 
-        fetch('/purchase', {
+        fetch('/store/purchase', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -73,8 +73,7 @@ const stripeHandler = StripeCheckout.configure ({
 
 function purchaseClicked () {
     const priceElement = document.getElementsByClassName('cart-total-price')[0]
-    const total = parseFloat(priceElement.innerText.replace('$', ' '))*100
-    console.log(total)
+    const total = Math.round(parseFloat(priceElement.innerText.replace('$', '')) * 100)
     stripeHandler.open({
         amount: total
     })
@@ -197,7 +196,6 @@ shopToggle.addEventListener('click', ()=> {
 //item count badge in cart 
 const itemCount = () => {
     let count = document.getElementsByClassName('cart-item-title').length
-    console.log(count)
     const cartCount = document.getElementById('cartCount') 
     cartCount.style.display ='inline'
     cartCount.innerText = count
