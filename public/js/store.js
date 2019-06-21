@@ -185,12 +185,13 @@ const searchFunction = () => {
 const cartToggle = document.getElementById('cart')
 const cartContent = document.getElementById('cartContent')
 cartToggle.addEventListener('click', ()=> {
-    cartContent.style.display = 'block';
+    cartContent.style.display = 'block'
+    cartContent.classList.toggle('open')
 })
 
 const shopToggle = document.getElementById('shop')
 shopToggle.addEventListener('click', ()=> {
-    cartContent.style.display = 'none';
+    cartContent.classList.toggle('open')
 })
 
 //item count badge in cart 

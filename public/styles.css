@@ -409,7 +409,16 @@ input:focus {
     background-color: hsla(360, 100%, 100%, 0.95);
     padding: 2rem;
     overflow: auto;
+    clip-path: circle(100px at -10% -10%);
+        -webkit-clip-path: circle(100px at -10% -10%);
+        transition: all 800ms ease-out;
 }
+
+#cartContent.open{
+    clip-path: circle(1500px at -10% -10%);
+    -webkit-clip-path: circle(1500px at -10% -10%);
+}
+
 
 #cart a {
     color: white;
@@ -537,7 +546,7 @@ form label{
 }
 
 .mars-login .login-form{
-    background-color: hsla(200, 100%, 6%, 0.8);
+    background-color: hsla(0, 93%, 29%, 0.8);
     position: relative;
     left: 50%;
     top: 25%;
