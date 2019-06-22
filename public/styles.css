@@ -15,10 +15,6 @@ html, body {
     font-family: "Raleway", Arial, sans-serif;
 }
 
-img {
-    width: 100%;
-}
-
 a:-webkit-any-link {
     text-decoration: none !important;
 }
@@ -555,6 +551,17 @@ form label{
     color: white;
 }
 
+/**/
+.dashboard img {
+    width: 100%;
+}
+
+
+#youtube {
+    width: 90vw;
+    height: 300px;
+}
+
 /*404*/
 .not-found-msg {
     font-size: 2rem;
@@ -616,6 +623,11 @@ form label{
         position: relative;
         left: 50%;
         top: 25%;
+    }
+
+    #youtube {
+        width: 1000px;
+        height: 560px;
     }
     
 }
