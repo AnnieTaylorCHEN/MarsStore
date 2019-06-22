@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Thirty Seconds to Mars | Login</title>
+        <title>Thirty Seconds to Mars | Echelon Area</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="This is the description">
         <link rel="icon" href="/Images/mars-icon.png" type="image/x-icon"/>
@@ -25,31 +25,8 @@
             </nav>
         </header>
 
-    <section class="login-bg mars-login">
-        <div class="login-form">
-        <%- include('./partials/message')  %>
-            <p>ECHELON, log in for exclusive content just for you!</p>
-            <form class="input-group" action="/users/login" method="POST">
-                <label for="email">Email: (required)</label>
-                <input 
-                type="email" 
-                id="email"
-                name="email" 
-                placeholder="type your email" 
-                value="<%= typeof email!= 'undefined' ? email : '' %>"
-                required >
-                <label for="password">Password: (required)</label>
-                <input 
-                type="password" 
-                id="password"
-                name="password" 
-                placeholder="type your password" 
-                value="<%= typeof password!= 'undefined' ? password : '' %>"
-                required >
-                <button type="submit" class="btn btn-primary">Let me in</button>
-            </form>
-            <p>Don't have an account? <a href="/users/signup" class="btn btn-primary">sign up</a></p>
-        </div>
+    <section class="login-bg contact-bg">
+        <h1 class="not-found-msg">Sorry, the page is not found. Try something else?</h1>
     </section>
 
     <footer class="main-footer">

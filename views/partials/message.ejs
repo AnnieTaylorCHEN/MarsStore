@@ -1,0 +1,13 @@
+<% if(typeof errors != 'undefined'){ %>
+    <% errors.forEach((error)=> { %>
+        <h1><%= error.msg%></h1>
+    <% })%>
+<% } %>
+
+<% if(locals.success_msg != null){ %>
+    <h1><%= success_msg %></h1>
+<% } %>
+
+<% if (error != ''){ %>
+  <h1><%= error %></h1>
+<% } %>

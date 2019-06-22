@@ -15,6 +15,10 @@ html, body {
     font-family: "Raleway", Arial, sans-serif;
 }
 
+img {
+    width: 100%;
+}
+
 a:-webkit-any-link {
     text-decoration: none !important;
 }
@@ -400,7 +404,6 @@ input:focus {
 }
 
 #cartContent {
-    display: none;
     position: fixed;
     right: 0;
     bottom: 0;
@@ -409,14 +412,14 @@ input:focus {
     background-color: hsla(360, 100%, 100%, 0.95);
     padding: 2rem;
     overflow: auto;
-    clip-path: circle(100px at -10% -10%);
-        -webkit-clip-path: circle(100px at -10% -10%);
+    clip-path: circle(100px at -15% -15%);
+        -webkit-clip-path: circle(100px at -15% -15%);
         transition: all 800ms ease-out;
 }
 
 #cartContent.open{
-    clip-path: circle(1500px at -10% -10%);
-    -webkit-clip-path: circle(1500px at -10% -10%);
+    clip-path: circle(1500px at -15% -15%);
+    -webkit-clip-path: circle(1500px at -15% -15%);
 }
 
 
@@ -542,18 +545,21 @@ form label{
 /*login page*/
 .mars-login {
     background-image: url(Images/mars-login-bg.jpg);
-    display: block;
 }
 
 .mars-login .login-form{
     background-color: hsla(0, 93%, 29%, 0.8);
-    position: relative;
-    left: 50%;
-    top: 25%;
 }
 
 .mars-login input {
     color: white;
+}
+
+/*404*/
+.not-found-msg {
+    font-size: 2rem;
+    color: white;
+    padding: 1rem;
 }
 
 /*desktop*/
@@ -601,6 +607,17 @@ form label{
         display: flex;
         flex-direction: row;
     }
+
+    .mars-login {
+        display: block;
+    }
+
+    .mars-login .login-form{
+        position: relative;
+        left: 50%;
+        top: 25%;
+    }
+    
 }
 
 @media only screen and (min-width: 1024px){

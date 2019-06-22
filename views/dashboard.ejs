@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Thirty Seconds to Mars | Login</title>
+        <title>Thirty Seconds to Mars | Echelon Area</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="This is the description">
         <link rel="icon" href="/Images/mars-icon.png" type="image/x-icon"/>
@@ -25,31 +25,19 @@
             </nav>
         </header>
 
-    <section class="login-bg mars-login">
-        <div class="login-form">
-        <%- include('./partials/message')  %>
-            <p>ECHELON, log in for exclusive content just for you!</p>
-            <form class="input-group" action="/users/login" method="POST">
-                <label for="email">Email: (required)</label>
-                <input 
-                type="email" 
-                id="email"
-                name="email" 
-                placeholder="type your email" 
-                value="<%= typeof email!= 'undefined' ? email : '' %>"
-                required >
-                <label for="password">Password: (required)</label>
-                <input 
-                type="password" 
-                id="password"
-                name="password" 
-                placeholder="type your password" 
-                value="<%= typeof password!= 'undefined' ? password : '' %>"
-                required >
-                <button type="submit" class="btn btn-primary">Let me in</button>
-            </form>
-            <p>Don't have an account? <a href="/users/signup" class="btn btn-primary">sign up</a></p>
-        </div>
+    <section class="container content-section">
+        <h1>Welcome, <%= name %>!</h1>
+        <hr>
+        <h1>Check out our latest music video - Walk on Water. We can't make it without you guys! Thank you!</h1>
+        <iframe width="1000" height="560" src="https://www.youtube-nocookie.com/embed/FA2w-PMKspo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <h1>We are going to send 100 singles on July 4th, send us a message on contact page: tell us what America means to you?</h1>
+        <img src="/Images/echelon3.jpg">
+        <h1>We had so much fun at LA concert, were you with us?</h1>
+        <img src="/Images/echelon2.jpg">
+        <h1>Remember those who sacrificed for our country.</h1>
+        <img src="/Images/echelon1.png">
+        <hr>
+        <a href="/users/logout" class="btn btn-primary">Log out</a>
     </section>
 
     <footer class="main-footer">

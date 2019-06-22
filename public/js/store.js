@@ -185,7 +185,6 @@ const searchFunction = () => {
 const cartToggle = document.getElementById('cart')
 const cartContent = document.getElementById('cartContent')
 cartToggle.addEventListener('click', ()=> {
-    cartContent.style.display = 'block'
     cartContent.classList.toggle('open')
 })
 
